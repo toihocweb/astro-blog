@@ -3,30 +3,26 @@ import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import { Image } from "@astrojs/image/components";
 
-const posts = [
-  {
-    title: "First Post",
-    description: "This is the first post",
-    category: "astro",
-    thumbnail: "https://picsum.photos/200/300",
-    author: "John Doe",
-    slug: "first-post",
-  },
-];
+const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort((a, b) => {
+  return (
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf()
+  );
+});
+
+console.log(posts);
 ---
 
 <Layout title="Welcome to My Blog.">
-  <main class="container mx-auto">
-    <ul class="grid grid-cols-3">
-      {
-        posts.map((post) => (
-          <li class="">
-            <a href={post.slug}>{post.title}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </main>
+  <ul class="grid grid-cols-3">
+    {
+      posts.map((post) => (
+        <li class="">
+          <a href={post.url}>{post.frontmatter.title}</a>
+        </li>
+      ))
+    }
+  </ul>
 </Layout>
 
 <style></style>
