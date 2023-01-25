@@ -7,15 +7,13 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort((a, b) => {
     new Date(a.frontmatter.date).valueOf()
   );
 });
-
-const { thumbnail } = Astro.props;
 ---
 
 <Layout title="Welcome to My Blog.">
-  <ul class="grid grid-cols-5 gap-4 mt-10">
+  <ul class="grid grid-cols-5 gap-4">
     {
       posts.map((post) => {
-        const { thumbnail, title, description } = post.frontmatter;
+        const { thumbnail, title, description, date } = post.frontmatter;
         return (
           <li class="card shadow-md">
             <div class="w-full">
@@ -25,7 +23,10 @@ const { thumbnail } = Astro.props;
               <a class="text-xl font-bold" href={post.url}>
                 {title}
               </a>
-              <p>{description}</p>
+              <span class="block font-thin italic text-sm mb-2">
+                {new Date(date).toLocaleString()}
+              </span>
+              <p class="text-sm text-gray-700">{description}</p>
             </div>
           </li>
         );
