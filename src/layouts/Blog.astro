@@ -1,8 +1,11 @@
 ---
 import Layout from "./Layout.astro";
+const {
+  content: { title },
+} = Astro.props;
 ---
 
-<Layout title="">
+<Layout title={title}>
   <div class="p-4 shadow-md">
     <slot />
   </div>
