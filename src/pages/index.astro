@@ -1,7 +1,5 @@
 ---
-import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
-import { Image } from "@astrojs/image/components";
 
 const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort((a, b) => {
   return (
@@ -10,17 +8,28 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort((a, b) => {
   );
 });
 
-console.log(posts);
+const { thumbnail } = Astro.props;
 ---
 
 <Layout title="Welcome to My Blog.">
-  <ul class="grid grid-cols-3">
+  <ul class="grid grid-cols-5 gap-4 mt-10">
     {
-      posts.map((post) => (
-        <li class="">
-          <a href={post.url}>{post.frontmatter.title}</a>
-        </li>
-      ))
+      posts.map((post) => {
+        const { thumbnail, title, description } = post.frontmatter;
+        return (
+          <li class="card shadow-md">
+            <div class="w-full">
+              <img src={thumbnail} alt="" class="w-full" />
+            </div>
+            <div class="p-3">
+              <a class="text-xl font-bold" href={post.url}>
+                {title}
+              </a>
+              <p>{description}</p>
+            </div>
+          </li>
+        );
+      })
     }
   </ul>
 </Layout>
