@@ -3,7 +3,7 @@ layout: ../../layouts/Blog.astro
 title: window.location Cheatsheet
 description: Tìm hiểu về window.location để đi phỏng vấn 10đ
 date: 2023-01-25T12:45:45.513Z
-thumbnail: /assets/capture.jpg
+thumbnail: https://i.ibb.co/MGc76hw/Capture.jpg
 ---
 > `https://www.samanthaming.com/tidbits/?filter=JS#2`
 
