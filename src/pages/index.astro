@@ -1,0 +1,32 @@
+---
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+import { Image } from "@astrojs/image/components";
+
+const posts = [
+  {
+    title: "First Post",
+    description: "This is the first post",
+    category: "astro",
+    thumbnail: "https://picsum.photos/200/300",
+    author: "John Doe",
+    slug: "first-post",
+  },
+];
+---
+
+<Layout title="Welcome to My Blog.">
+  <main class="container mx-auto">
+    <ul class="grid grid-cols-3">
+      {
+        posts.map((post) => (
+          <li class="">
+            <a href={post.slug}>{post.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>
+
+<style></style>
