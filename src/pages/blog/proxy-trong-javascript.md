@@ -7,30 +7,21 @@ thumbnail: https://i1.wp.com/blog.alexdevero.com/wp-content/uploads/2020/06/29-0
 ---
 ## P﻿ROXY trong Javascript
 
-d﻿asdas
+H﻿ỏi: proxy dùng để làm gì
 
-s﻿dkfadas
+T﻿rả lời: proxy giúp xử lí 1 object trong js
 
-d﻿asld
+C﻿hẳng hạn chúng ta có object sau 
 
-a﻿sdas,
+```javascript
+const product = { 
+    name: "Apple",
+    price: 18
+}
 
-d﻿as
+<p>{product.price} USD</p>
+```
 
-d﻿,'as
+c﻿ó thể thấy, cứ mỗi lần muốn sử dụng **price** ta đều thêm hậu tố "**USD**" vào sau
 
-.﻿asd,
-
-s﻿a
-
-d﻿,.as
-
-d﻿
-
-a﻿sd.,a
-
-
-
-d﻿as.d,a
-
-s﻿d,as.d
+g﻿iả sử giờ muốn thay đổi "**USD**" thành "VND" chúng ta phải tìm hết tất mọi file trong project,
