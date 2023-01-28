@@ -17,7 +17,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort((a, b) => {
         return (
           <li class="card shadow-md">
             <div class="w-full">
-              <img src={thumbnail} alt="" class="w-full" />
+              <img src={`../${thumbnail}`} alt="" class="w-full" />
             </div>
             <div class="p-3">
               <a class="text-xl font-bold" href={post.url}>
