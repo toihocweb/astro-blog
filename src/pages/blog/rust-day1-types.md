@@ -130,7 +130,11 @@ assert_eq!(pal, vec!["step", "on", "no", "pets"]);
 
 ### S﻿lice
 
-A slice is a reference to a contiguous section of an array. It provides a way to access multiple elements of an array without copying the entire array.
+*Slices* let you reference a contiguous sequence of elements in a collection rather than the whole collection. A slice is a kind of reference, so it does not have ownership.
+
+
+
+**S﻿lice for array** 
 
 ```rust
 let mut a = [1, 2, 3, 4, 5];
@@ -139,4 +143,23 @@ for x in &mut *s {
 *x += 10;
 }
 println!("The slice is: {:?}", s);
+```
+
+**S﻿lice for string**
+
+```rust
+let s = String::from("Hello, world!");
+let hello = &s[0..5];
+println!("{}", hello);
+
+```
+
+**S﻿lice for vector**
+
+```rust
+let v = vec![1, 2, 3, 4, 5];
+let s = &v[1..4];
+
+println!("The slice is: {:?}", s);
+// The slice is: [2, 3, 4]
 ```
