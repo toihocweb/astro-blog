@@ -132,6 +132,10 @@ assert_eq!(pal, vec!["step", "on", "no", "pets"]);
 
 *Slices* let you reference a contiguous sequence of elements in a collection rather than the whole collection. A slice is a kind of reference, so it does not have ownership.
 
+r﻿emeber use: **{:?}**
+
+println!("The slice is: **{:?}**", s);
+
 
 
 **S﻿lice for array** 
@@ -151,7 +155,6 @@ println!("The slice is: {:?}", s);
 let s = String::from("Hello, world!");
 let hello = &s[0..5];
 println!("{}", hello);
-
 ```
 
 **S﻿lice for vector**
