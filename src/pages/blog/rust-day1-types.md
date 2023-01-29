@@ -7,8 +7,6 @@ thumbnail: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAA
 ---
 ## F﻿undamental Types
 
-
-
 ### S﻿tring
 
 ```rust
@@ -22,8 +20,6 @@ let default_win_install_path = r"C:\Program Files\Gorillas";
 // regex
 let pattern = Regex::new(r"\d+(\.\d+)*");
 ```
-
-
 
 ### Fixed-Width Numeric Types
 
@@ -115,8 +111,7 @@ assert!(sieve[211]);
 assert!(!sieve[9876]);
 ```
 
-### \
-V﻿ector
+### V﻿ector
 
 Vectors can grow or shrink in size at runtime.
 
