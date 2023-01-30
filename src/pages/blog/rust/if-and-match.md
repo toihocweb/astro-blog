@@ -10,7 +10,7 @@ thumbnail: /assets/download.png
 
 \-﻿--------------------
 
-**i﻿f - else** is so easy to understand
+**`i﻿f - else`** is so easy to understand
 
 ```rust
 if condition1 {
@@ -22,7 +22,7 @@ if condition1 {
 }
 ```
 
-**m﻿atch** is like "switch-case" in another languages
+**`m﻿atch`** is like "switch-case" in another languages
 
 ```rust
 match code {
@@ -33,4 +33,23 @@ match code {
     // _ is like default: 
     _ => println!("Unrecognized Error {}", code)
 }
+```
+
+example about **`match`** with **HashMap**
+
+```rust
+use std::collections::HashMap;
+
+fn main() {
+    let mut user = HashMap::new();
+    user.insert("name", "John");
+    user.insert("age", "30");
+  
+    match user.get("name") {
+        Some(name) => println!("Hello, {}!", name),
+        None => println!("Greetings, stranger.")
+    }
+}
+
+
 ```
