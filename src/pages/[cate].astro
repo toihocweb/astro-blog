@@ -2,6 +2,27 @@
 import Layout from "../layouts/Layout.astro";
 
 // get location of url
+
+export function getStaticPaths() {
+  return [
+    {
+      params: {
+        cate: "rust",
+      },
+    },
+    {
+      params: {
+        cate: "frontend",
+      },
+    },
+    {
+      params: {
+        cate: "backend",
+      },
+    },
+  ];
+}
+
 const { cate } = Astro.params;
 
 const posts = (await Astro.glob(`./blog/**/*.md`))
