@@ -55,7 +55,7 @@ user.greet(); // "Hello, my name is John"
 
 this bên trong `innerFunc` không phải là object user nữa nhé, mà nó là window object (window object là khi chạy js trên browser mới có nha, còn chạy trên node thì là object rỗng {} )
 
-Vậy làm sao để `this` trong function `innerFunc` là object user nhỉ, đơn giản thôi, ta có thể sử dụng `call`, `bind`, `apply`
+Vậy làm sao để `this` trong function `innerFunc` là object user nhỉ, đơn giản thôi, ta có thể sử dụng `call`, `bind`, `apply,`hoặc `chuyển innerFunc thành arrow function`
 
 ```javascript
 let user = {
@@ -85,4 +85,50 @@ function myFunction() {
   console.log(this);  // outputs the window object
 }
 
+```
+
+
+
+### This bên trong function, có strict mode
+
+```javascript
+function myFunction() {
+  "use strict";  // enable strict mode
+  console.log(this);  // outputs undefined
+}
+
+myFunction();
+
+```
+
+lưu ý là trong object method, thì vẫn là object mà nó thuộc zề
+
+```javascript
+let obj = {
+  name: "John",
+  greet: function() {
+    "use strict";  // enable strict mode
+    console.log("Hello, my name is " + this.name);  // outputs "Hello, my name is John"
+  }
+};
+
+obj.greet();
+
+```
+
+
+
+## This trong class
+
+khi sử dụng từ khóa `new` thì 1 object rỗng được tạo ra, `this` chính là object rỗng đó
+
+```javascript
+class User {
+  constructor() {
+    this.name = "Maria;
+  }
+}
+
+const user = new User();
+console.log(user.name); // Maria
 ```
