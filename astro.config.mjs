@@ -9,7 +9,11 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 
 // https://astro.build/config
+import netlify from "@astrojs/netlify/functions";
+
+// https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), image(), mdx(), sitemap()],
   output: "server",
+  adapter: netlify()
 });
