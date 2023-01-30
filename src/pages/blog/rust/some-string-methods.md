@@ -5,7 +5,7 @@ description: some common methods for String in rust
 date: 2023-01-30T08:02:11.365Z
 thumbnail: /assets/download.png
 ---
-## Some String methods 
+## Some String methods
 
 1. `len`: Returns the length of the string.
 2. `is_empty`: Returns `true` if the string is empty, `false` otherwise.
@@ -17,6 +17,8 @@ thumbnail: /assets/download.png
 8. `to_lowercase`: Converts the string to lowercase.
 9. `to_uppercase`: Converts the string to uppercase.
 10. `parse`: Parses the string into a specified numeric or boolean type.
+
+
 
 ```rust
 let mut s = String::from("   Hello, World!   ");
@@ -51,5 +53,4 @@ let n = match a.parse::<i32>() {
     Err(_) => panic!("Failed to parse integer"),
 };
 println!("{}", n + 1); // 11
-
 ```
