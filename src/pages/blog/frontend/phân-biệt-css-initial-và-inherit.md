@@ -9,7 +9,7 @@ thumbnail: /assets/css.png
 
 ### I﻿nherit
 
-T﻿rong css, một element có thể kế thừa các thuộc tính CSS từ ***thằng cha gần nhất*** có thuộc tính đó, ví dụ
+T﻿rong css, một element có thể kế thừa các thuộc tính CSS từ ***thằng cha gần nhất*** có thuộc tính đó,  bằng cách sử dụng `inherit`, ví dụ 
 
 H﻿TML:
 
