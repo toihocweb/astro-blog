@@ -39,13 +39,12 @@ K﻿hi đó `.child` sẽ có color và font-size kế thừa từ class `.grand
 
 ### I﻿nitial
 
-khi 1 thuộc tính css có giá trị `initial `nghĩa là, giá trị của nó sẽ được xác định bởi user agent(ví dụ như browser), browser là trình duyệt web đang sử dụng như chrome, firefox...
+khi 1 thuộc tính css có giá trị `initial`nghĩa là, giá trị của nó sẽ được xác định bởi user agent(ví dụ như browser), browser là trình duyệt web đang sử dụng như chrome, firefox...
 
 H﻿TML:
 
 ```html
 <p class="text">This is some text.</p>
-
 ```
 
 C﻿SS: 
@@ -59,13 +58,16 @@ C﻿SS:
   background-color: initial; 
   display: initial;
 }
-
 ```
-
-
 
 khi giờ hãy đoán xem background của `.text` là gì nào? 
 
-n﻿ó sẽ có giá trị là `transparent` vì giá trị mặc định của `background-color` là `transparent `ở tất cả các trình duyệt  
+n﻿ó sẽ có giá trị là `transparent` vì giá trị mặc định của `background-color` là `transparent`ở tất cả các trình duyệt  
 
-t﻿ương tự với giá trị của display, nếu bạn nghĩ giá trị của display là `block`, thì chúc mừng bạn đã sai rồi
+T﻿ương tự k﻿hi set initial value cho display, nếu bạn nghĩ giá trị của display là `block`, thì chúc mừng bạn đã sai rồi 
+
+Chính xác thì giá trị initial của display là `inline`, nghĩa là `.text` sẽ có display là `inline`
+
+V﻿ậy để có thể sử dụng được chính xác `initial`, thì bạn **`phải biết đc giá trị mặc định của thuộc tính đó`**, ở trình duyệt tương ứng,
+
+***ở thời điểm  hiện tại, hầu như tất cả các trình duyệt đều có initial value như nhau, nên chúng ta không cần quan tâm nhiều đến trình duyệt nữa.***
