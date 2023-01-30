@@ -42,14 +42,14 @@ let user = {
   greet: function () {
     console.log("Hello, my name is " + this.name); //  this = user
     const innerFunc = function () {
-      console.log("InnerFunc::Hello, my name is " + this.name); // this = window
+      console.log("InnerFunc::Hello, my name is " + this.name); // this = window, output "InnerFunc::Hello, my name is undefined"
     };
     innerFunc();
   },
 };
 
 user.greet(); // "Hello, my name is John" 
-			  // "InnerFunc::Hello, my name is undefined"
+			  
 
 ```
 
@@ -63,14 +63,13 @@ let user = {
   greet: function () {
     console.log("Hello, my name is " + this.name); //  this = user
     const innerFunc = function () {
-      console.log("InnerFunc::Hello, my name is " + this.name); // this = window
-    }.bind(this); // sử dụng bind, khi đó this chính là user
+      console.log("InnerFunc::Hello, my name is " + this.name); //  output "InnerFunc::Hello, my name is John"
+    }.bind(this); // sử dụng bind, khi đó this = user
     innerFunc();
   },
 };
 
 user.greet(); // "Hello, my name is John" 
-			  // "InnerFunc::Hello, my name is John"
 
 ```
 
@@ -118,7 +117,7 @@ obj.greet();
 
 
 
-## This trong class
+### This trong class
 
 khi sử dụng từ khóa `new` thì 1 object rỗng được tạo ra, `this` chính là object rỗng đó
 
@@ -132,3 +131,62 @@ class User {
 const user = new User();
 console.log(user.name); // Maria
 ```
+
+
+
+### This trong arrow function
+
+có 2 trường hợp
+
+1. arrow function đó không nằm trong regular function
+2. arrow function đó nằm trong regular function
+
+#### arrow function không nằm trong regular function
+
+khi đó `this` chính là global object(window object nếu chạy trên trình duyệt)
+
+```javascript
+const test = () => {
+  console.log(this); // this = window
+};
+test();
+
+```
+
+#### arrow function nằm trong regular function
+
+```javascript
+let obj = {
+  name: "John",
+  greet: function() {
+    console.log("Hello, my name is " + this.name);  // outputs "Hello, my name is John"
+
+    let arrowFunction = () => {
+      console.log("Arrow function says: " + this.name);  // outputs "Arrow function says: John"
+    };
+
+    arrowFunction();
+  }
+};
+
+obj.greet();
+
+```
+
+arrowFunction nằm trong regular function `greet`, khi đó `this` bên trong arrowFunction sẽ chính là `this` của `greet`
+
+### This bên trong event
+
+`this` bên trong event chính là phần tử đang thực hiện event đó, 
+
+ở code bên dưới chúng ta add event vào `el` khi đó `this` chính là `el`
+
+```javascript
+const el = document.getElementById('my-id');
+
+el.addEventListener('click', function() {
+  console.log(this === el); // true
+});
+```
+
+### This trong call, apply, bind
