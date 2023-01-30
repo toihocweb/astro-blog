@@ -1,13 +1,12 @@
 ---
-layout: ../../layouts/Blog.astro
+layout: ../../../layouts/Blog.astro
 title: Rust [Day2] - Variables
 description: learn how to use variable in Rust
 date: 2023-01-30T02:49:59.131Z
 thumbnail: /assets/download.png
 ---
+
 ## Rust \[Day2] - Variables
-
-
 
 In Rust, a variable is a named storage location that holds a value of a specific type. Variables in Rust are **immutable by default,** meaning their value cannot be changed after they are declared. To make a variable mutable, you need to add the keyword `mut` before its declaration.
 
@@ -24,8 +23,6 @@ y = 44;  // changing the value of y
 println!("The value of y is now: {}", y);
 ```
 
-
-
 Constants are declared using the `const` keyword and **must be annotated with a type,** as the type cannot be inferred from the value.
 
 ```rust
@@ -33,8 +30,6 @@ const MAX_ITEMS: u32 = 100;
 println!("The maximum number of items is: {}", MAX_ITEMS);
 
 ```
-
-
 
 `static` is a keyword in Rust used to declare a global variable. `static` variables have a fixed address in memory and are stored in the data segment of a program. Unlike local variables, `static` variables persist throughout the lifetime of the program and **maintain their values across function calls.**
 

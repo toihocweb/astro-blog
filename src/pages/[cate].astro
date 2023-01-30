@@ -2,13 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 
 // get location of url
+const { cate } = Astro.params;
 
-const posts = (await Astro.glob("./blog/**/*.md")).sort((a, b) => {
-  return (
-    new Date(b.frontmatter.date).valueOf() -
-    new Date(a.frontmatter.date).valueOf()
-  );
-});
+const posts = (await Astro.glob(`./blog/**/*.md`))
+  .filter((val) => {
+    return val.url.includes(`/blog/${cate}`);
+  })
+  .sort((a, b) => {
+    return (
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf()
+    );
+  });
 ---
 
 <Layout title="Welcome to My Blog.">

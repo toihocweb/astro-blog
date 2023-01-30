@@ -8,6 +8,13 @@ module.exports = {
       },
     },
     extend: {},
+    fontFamily: {
+      sans: ["ui-monospace", "system-ui"],
+      serif: ["ui-serif", "Georgia"],
+      mono: ["ui-monospace", "SFMono-Regular"],
+      display: ["Oswald"],
+      body: ['"Open Sans"'],
+    },
   },
   plugins: [],
 };

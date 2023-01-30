@@ -1,15 +1,23 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+
+// get path from the URL
+const path = Astro.url.pathname;
 ---
 
 <header class="bg-green-400">
-  <div class="container mx-auto flex justify-between py-3">
+  <div class="container mx-auto flex justify-between py-3 items-center">
     <div class="logo">
       <a href="/" class="text-3xl font-bold">NB</a>
     </div>
     <nav>
       <ul class="flex">
-        <HeaderLink href="/" class="ml-3">Blogs</HeaderLink>
+        <HeaderLink href="/" class={`ml-3 ${path ? "text-bold" : ""}`}>
+          All
+        </HeaderLink>
+        <HeaderLink href="/rust" class="ml-3">Rust</HeaderLink>
+        <HeaderLink href="/frontend" class="ml-3">Frontend</HeaderLink>
+        <HeaderLink href="/backend" class="ml-3">Backend</HeaderLink>
       </ul>
     </nav>
   </div>

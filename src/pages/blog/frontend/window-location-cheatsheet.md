@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/Blog.astro
+layout: ../../../layouts/Blog.astro
 title: window.location Cheatsheet
 description: Tìm hiểu về window.location để đi phỏng vấn 10đ
 date: 2023-01-25T13:17:28.023Z
