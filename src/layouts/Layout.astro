@@ -101,4 +101,37 @@ const { title } = Astro.props;
   blockquote p {
     display: inline;
   }
+
+  /* set ul, ol default css */
+  code {
+    font-family: MyFancyCustomFont, monospace;
+    font-size: inherit;
+  }
+
+  /* Code in text */
+  p > code,
+  li > code,
+  dd > code,
+  td > code {
+    background: #ffeff0;
+    word-wrap: break-word;
+    box-decoration-break: clone;
+    padding: 0.1rem 0.3rem 0.2rem;
+    border-radius: 0.2rem;
+  }
+
+  main > ul {
+    list-style: none;
+  }
+  ul,
+  ol {
+    padding-left: 2rem;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+  ul {
+    list-style: disc;
+  }
 </style>
