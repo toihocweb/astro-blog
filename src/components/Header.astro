@@ -1,8 +1,5 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-
-// get path from the URL
-const path = Astro.url.pathname;
 ---
 
 <header class="bg-green-400">
@@ -12,9 +9,7 @@ const path = Astro.url.pathname;
     </div>
     <nav>
       <ul class="flex">
-        <HeaderLink href="/" class={`ml-3 ${path ? "text-bold" : ""}`}>
-          All
-        </HeaderLink>
+        <HeaderLink href="/" class="ml-3">All</HeaderLink>
         <HeaderLink href="/rust" class="ml-3">Rust</HeaderLink>
         <HeaderLink href="/frontend" class="ml-3">Frontend</HeaderLink>
         <HeaderLink href="/backend" class="ml-3">Backend</HeaderLink>

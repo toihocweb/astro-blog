@@ -14,4 +14,5 @@ import netlify from "@astrojs/netlify/functions";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), image(), mdx(), sitemap()],
+  trailingSlash: "never",
 });

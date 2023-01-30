@@ -5,7 +5,8 @@ export interface Props {
 }
 
 const { href, class: className, ...props } = Astro.props;
-const isActive = href === Astro.url.pathname;
+const isActive =
+  href === Astro.url.pathname || href + "/" === Astro.url.pathname;
 ---
 
 <a class:list={[className, { active: isActive }]} href={href} {...props}>
