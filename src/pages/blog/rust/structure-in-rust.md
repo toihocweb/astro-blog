@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Blog.astro
-title: Structure in Rust
+title: Rust [Day4] - Structure in Rust
 description: Structure is one of the most important concept when start learning
   Rust, let check it
 date: 2023-01-31T04:03:30.197Z
