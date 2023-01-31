@@ -11,8 +11,6 @@ thumbnail: /assets/js-15429579443112042672363-crop-1542957949936317424252.webp
 
 Cùng nhau tìm hiểu xem `this` có gì khó không nhé,
 
-
-
 ### This bên trong object method
 
 **object method** là 1 cái function nằm bên trong object á
@@ -31,7 +29,6 @@ let user = {
 
 
 user.greet(); // outputs "Hello, my name is John"
-
 ```
 
 Tuy nhiên hãy cẩn thẩn với ví dụ dưới đây
@@ -50,7 +47,6 @@ let user = {
 
 user.greet(); // "Hello, my name is John" 
 			  
-
 ```
 
 this bên trong `innerFunc` không phải là object user nữa nhé, mà nó là window object (window object là khi chạy js trên browser mới có nha, còn chạy trên node thì là object rỗng {} )
@@ -70,10 +66,7 @@ let user = {
 };
 
 user.greet(); // "Hello, my name is John" 
-
 ```
-
-
 
 ### This bên trong function, không có strict mode
 
@@ -83,10 +76,7 @@ khi đó `this` chính là `global object`, nếu chạy js trên browser thì �
 function myFunction() {
   console.log(this);  // outputs the window object
 }
-
 ```
-
-
 
 ### This bên trong function, có strict mode
 
@@ -97,7 +87,6 @@ function myFunction() {
 }
 
 myFunction();
-
 ```
 
 lưu ý là trong object method, thì vẫn là object mà nó thuộc zề
@@ -112,10 +101,7 @@ let obj = {
 };
 
 obj.greet();
-
 ```
-
-
 
 ### This trong class
 
@@ -132,13 +118,11 @@ const user = new User();
 console.log(user.name); // Maria
 ```
 
-
-
 ### This trong arrow function
 
 có 2 trường hợp
 
-1. arrow function đó không nằm trong regular function
+1. arrow function đó không nằm trong regular function **(function declaration, function expression)**
 2. arrow function đó nằm trong regular function
 
 #### arrow function không nằm trong regular function
@@ -150,7 +134,6 @@ const test = () => {
   console.log(this); // this = window
 };
 test();
-
 ```
 
 #### arrow function nằm trong regular function
@@ -170,7 +153,6 @@ let obj = {
 };
 
 obj.greet();
-
 ```
 
 arrowFunction nằm trong regular function `greet`, khi đó `this` bên trong arrowFunction sẽ chính là `this` của `greet`
@@ -188,5 +170,3 @@ el.addEventListener('click', function() {
   console.log(this === el); // true
 });
 ```
-
-### This trong call, apply, bind
