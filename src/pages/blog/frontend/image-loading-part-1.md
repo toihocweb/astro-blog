@@ -93,6 +93,6 @@ imgElement.setAttribute('src', imgSource);
 
 1. server cần nhiều dung lượng để chứa nhiều hình hơn 
 2. bị giới hạn về trình duyệt
-3. hi thay đổi kích thước màn hình thì trình duyệt sẽ phải tính toán lại media, và tải hình tương ứng, dẫn đến việc nếu hình ảnh không được cache thì trình duyệt sẽ liên tục download hình về
+3. khi thay đổi kích thước màn hình thì trình duyệt sẽ phải tính toán lại media, và tải hình tương ứng, dẫn đến việc nếu hình ảnh không được cache thì trình duyệt sẽ liên tục download hình về
 
-[![](https://i.ytimg.com/vi/_vo0yHPdYfY/maxresdefault.jpg)](https://www.youtube.com/watch?v=_vo0yHPdYfY)
+Link demo: <https://vimeo.com/794757818>
