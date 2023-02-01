@@ -30,8 +30,6 @@ fn main() {
 }
 ```
 
-
-
 * **Male, Female** is called "`variant`"
 
 ### Struct and Enum
@@ -63,7 +61,6 @@ fn main() {
    println!("{:?}",p1);
    println!("{:?}",p2);
 }
-
 ```
 
 ### Option Enum
@@ -91,6 +88,69 @@ fn is_even(no:i32)->Option<bool> {
       Some(true)
    } else {
       None
+   }
+}
+```
+
+### Variant with type in enum
+
+```rust
+enum Message {
+    Quit,
+    ChangeColor(i32, i32, i32),
+    Move { x: i32, y: i32 },
+    Write(String),
+}
+
+let x: Message = Message::Move { x: 3, y: 4 };
+
+```
+
+### Match with enum 
+
+```rust
+fn main() {
+   match is_even(5) {
+      Some(data) => {
+         if data==true {
+            println!("Even");
+         }
+      },
+      None => {
+         println!("Not even, maybe odd");
+      }
+   }
+}
+fn is_even(no:i32)->Option<bool> {
+   if no%2 == 0 {
+      Some(true)
+   } else {
+      None
+   }
+}
+```
+
+or 😃
+
+```rust
+#[derive(Debug)]
+enum GenderCategory {
+   Name(String),Usr_ID(i32)
+}
+
+fn main() {
+   let p1 = GenderCategory::Name(String::from("Mohtashim"));
+   let p2 = GenderCategory::Usr_ID(100);
+   println!("{:?}",p1);
+   println!("{:?}",p2);
+
+   match p1 {
+      GenderCategory::Name(val)=> {
+         println!("{}",val);
+      }
+      GenderCategory::Usr_ID(val)=> {
+         println!("{}",val);
+      }
    }
 }
 ```
