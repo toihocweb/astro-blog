@@ -5,7 +5,7 @@ description: kĩ thuật load ảnh dựa vào screen
 date: 2023-02-01T04:32:47.290Z
 thumbnail: /assets/1-1477901-1450843193145.webp
 ---
-## **huật load hình ảnh dựa vào screen**
+## Kĩ thuật **load hình ảnh dựa vào screen**
 
 ![](/assets/1-1477901-1450843193145.webp)
 
@@ -58,8 +58,6 @@ const imgElement = document.querySelector('#myImage');
 imgElement.setAttribute('src', imgSource);
 ```
 
-
-
 **Ưu điểm:**
 
 1. chỉ load những tấm hình phù hợp với kích thước màn hình 
@@ -69,8 +67,6 @@ imgElement.setAttribute('src', imgSource);
 
 1. server cần nhiều dung lượng để chứa nhiều hình hơn 
 2. kĩ thuật này cần phải có javascript mới chạy, nghĩa là nếu js bị disable thì k chạy được
-
-
 
 ##### Solution 2: sử dụng thẻ html <picture>
 
@@ -99,4 +95,4 @@ imgElement.setAttribute('src', imgSource);
 2. bị giới hạn về trình duyệt
 3. hi thay đổi kích thước màn hình thì trình duyệt sẽ phải tính toán lại media, và tải hình tương ứng, dẫn đến việc nếu hình ảnh không được cache thì trình duyệt sẽ liên tục download hình về
 
-[![](https://i.ytimg.com/vi/_vo0yHPdYfY/maxresdefault.jpg)](https://www.youtube.com/watch?v=_vo0yHPdYfY "")
+[![](https://i.ytimg.com/vi/_vo0yHPdYfY/maxresdefault.jpg)](https://www.youtube.com/watch?v=_vo0yHPdYfY)
