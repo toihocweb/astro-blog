@@ -7,6 +7,8 @@ thumbnail: /assets/1-1477901-1450843193145.webp
 ---
 ## **Load hình sử dụng intersection**
 
+![](/assets/1-1477901-1450843193145.webp)
+
 giả sử giờ web chúng ta có 100 tấm hình, nếu không có gì đặc biệt thì có phải khi user vào web, phải đợi tải hết 100 tấm hình này về thì mới sử dụng web mượt mà được phải khum nào.
 
 Hmmm, không có gì để nói nếu các tấm hình đó nhẹ, và mạng wifi nhà user đủ nhanh để tải về, nhưng thường thì đời không như mơ, 
