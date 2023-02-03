@@ -104,4 +104,4 @@ images.forEach(image => {
 
 **`intersecting`**: là trạng thái mà element nằm trong hay ngoài viewport hoặc root element
 
-Demo:
+Demo: [Click here](<https://player.vimeo.com/video/795469857?h=1a274dbd7e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture>)
