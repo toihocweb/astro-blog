@@ -59,13 +59,18 @@ HTML
 \
 để ý là, link hình ảnh được đặt vào trong dataset là `data-src` nhé, không phải trong `src` nha, lí do là nếu để trong `src` thì trình duyệt sẽ download toàn bộ về, v thì không còn ý nghĩa gì nữa
 
+Add thêm đoạn js sau
+
 ```javascript
-const images = document.querySelectorAll('img');
+const images = document.querySelectorAll('img'); // các DOM cần quan sát, ở đây ta lấy tất cả hình ảnh
+
 const options = {
     root: null,
-    rootMargin: '200px',
+    rootMargin: '0px',
     threshold: 0.5
 }
+
+// định nghĩa observer 
 const observer = new IntersectionObserver((entries, observer) => {
    entries.forEach((entry, idx) => {
         if(entry.isIntersecting) {
@@ -76,7 +81,28 @@ const observer = new IntersectionObserver((entries, observer) => {
     })
 }, options);
 
+// quan sát tất cả các <img> DOM
 images.forEach(image => {
     observer.observe(image);
 })
 ```
+
+
+
+**giải thích**
+
+`root`: là DOM mà bạn muốn quan sát, null nghĩa là đang quan sát browser window
+
+`rootMargin`: khoảng margin xung quanh root element(định nghĩa ở trên) dùng để xác định xem element(<img>) có đang intersecting hay không
+
+`threshold`: có giá trị từ 0.0 đến 1.0 tương ứng với 0% đến 100%, là giá trị phần trăm của target(<img>) ở trong viewport thì target đó sẽ đc set intersecting, giá trị có thể là array \[0.5,0.8] tương ứng 50%, 80%
+
+**`intersecting`**: là trạng thái mà element nằm trong hay ngoài viewport hoặc root element
+
+
+
+`if(entry.isIntersecting) {
+            const image = entry.target;
+            image.src = image.dataset.src;
+            observer.unobserve(image);
+ }`
