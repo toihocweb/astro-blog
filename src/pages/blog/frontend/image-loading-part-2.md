@@ -104,4 +104,6 @@ images.forEach(image => {
 
 **`intersecting`**: là trạng thái mà element nằm trong hay ngoài viewport hoặc root element
 
+##### Lưu ý, kĩ thuật này không những áp dụng với hình ảnh, mà có thể áp dụng với nhiều DOM khác, tuỳ bạn chọn để phù hợp với mục đích sử dụng nh
+
 Demo: [Click here](<https://player.vimeo.com/video/795469857?h=1a274dbd7e&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture>)
