@@ -92,16 +92,14 @@ images.forEach(image => {
 })
 ```
 
-
-
 **giải thích**
 
 `root`: là DOM mà bạn muốn quan sát, null nghĩa là đang quan sát browser window
 
-`rootMargin`: khoảng margin xung quanh root element(định nghĩa ở trên) dùng để xác định xem element(<img>) có đang intersecting hay không
+`rootMargin`: khoảng margin xung quanh root element(định nghĩa ở trên) dùng để xác định xem element(img) có đang intersecting hay không
 
-`threshold`: có giá trị từ 0.0 đến 1.0 tương ứng với 0% đến 100%, là giá trị phần trăm của target(<img>) ở trong viewport thì target đó sẽ đc set intersecting, giá trị có thể là array \[0.5,0.8] tương ứng 50%, 80%
+`threshold`: có giá trị từ 0.0 đến 1.0 tương ứng với 0% đến 100%, là giá trị phần trăm của target(img) ở trong viewport thì target đó sẽ đc set intersecting, giá trị có thể là array \[0.5,0.8] tương ứng 50%, 80%, callback function sẽ chạy khi viewport đạt đến giá trị threshhold này
 
 **`intersecting`**: là trạng thái mà element nằm trong hay ngoài viewport hoặc root element
 
-Demo: [Click here](<https://player.vimeo.com/video/795469857?h=1a274dbd7e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture>)
+Demo: [Click here](<https://player.vimeo.com/video/795469857?h=1a274dbd7e&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture>)
