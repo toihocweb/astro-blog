@@ -65,17 +65,22 @@ Add thêm đoạn js sau
 const images = document.querySelectorAll('img'); // các DOM cần quan sát, ở đây ta lấy tất cả hình ảnh
 
 const options = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.5
+    root: null, // browser window 
+    rootMargin: '0px', // root margin top, left, right, bottom = 0
+    threshold: 0.5 // kéo xuống >50% thì hình bắt đầu load
 }
 
 // định nghĩa observer 
 const observer = new IntersectionObserver((entries, observer) => {
    entries.forEach((entry, idx) => {
+        // xác định xem target nằm trong hay ngoài viewport, 
         if(entry.isIntersecting) {
             const image = entry.target;
+          
+            // khúc này là lấy cái giá trị trong data-src và set vào src nè
             image.src = image.dataset.src;
+          
+            // hình nào load rồi thì mình k theo dõi nữa
             observer.unobserve(image);
         }
     })
@@ -99,10 +104,4 @@ images.forEach(image => {
 
 **`intersecting`**: là trạng thái mà element nằm trong hay ngoài viewport hoặc root element
 
-
-
-`if(entry.isIntersecting) {
-            const image = entry.target;
-            image.src = image.dataset.src;
-            observer.unobserve(image);
- }`
+Demo:
