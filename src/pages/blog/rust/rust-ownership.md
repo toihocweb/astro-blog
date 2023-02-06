@@ -46,8 +46,7 @@ fn main(){
 }
 ```
 
-#### \
-Passing value to a function
+#### Passing value to a function
 
 ```rust
 fn main(){
@@ -76,8 +75,7 @@ fn display(v:Vec<i32>)->Vec<i32> {
 }
 ```
 
-### \
-Ownership and Primitive Types
+#### Ownership and Primitive Types
 
 In case of **primitive** **types**, contents from one variable is copied to another. So, there is **no ownership** move happening. This is because a primitive variable needs less resources than an object and **stored in the stack**, not heap. Consider the following example
 
