@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Blog.astro
-title: Rust [Day1] - Types
+title: Rust - Types
 description: learn fundamental type in Rust
 date: 2023-01-29T15:11:53.064Z
 thumbnail: /assets/download.png
