@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Blog.astro
-title: Rust [Day2] - Variables
+title: Rust - Variables
 description: learn how to use variable in Rust
 date: 2023-01-30T02:49:59.131Z
 thumbnail: /assets/download.png
