@@ -2,7 +2,7 @@
 layout: ../../../layouts/Blog.astro
 title: Rust - Ownership
 description: if you already know reference type in js, it's easy for you to
-  understand ownership
+  understand ownership, but a bit diff, let's check
 date: 2023-02-06T16:25:33.753Z
 thumbnail: /assets/download.png
 ---
