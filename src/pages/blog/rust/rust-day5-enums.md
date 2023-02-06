@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Blog.astro
-title: Rust [Day5] - Enums
+title: Rust - Enums
 description: "how to use enums in Rust, let check "
 date: 2023-02-01T03:17:14.500Z
 thumbnail: /assets/download.png
