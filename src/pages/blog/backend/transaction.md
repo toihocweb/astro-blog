@@ -56,3 +56,5 @@ Khi **thất bại**, database sẽ lấy lại gía trị ở trước đó, t�
 Giả sử khi xong 1 transaction, nhưng chưa kịp lưu trên database thì cúp cmn điện thì sao đây, thường thì các database sẽ có cơ chế "write-ahead logging", nghĩa là các thay đổi trong transaction sẽ được lưu trong log, và sử dụng nó để recover lại state của database
 
 > MySQL sử dụng InnoDB storage engine để đảm bảo rằng data sẽ không bị mất khi transaction có vấn đề như trên, **"transactions in MySQL are durable and their changes will persist in the database, even in the face of failures or crashes"**
+
+**NHƯNG -** không có j là chắc chắn 100% đâu nhé, các database hiện giờ luôn giảm rủi ro mất dữ liệu xuống thấp nhất có thể, để đảm bảo tính durable, tuy nhiên 100% thì là không thể.
