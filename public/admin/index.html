@@ -22,9 +22,9 @@
     document.addEventListener("DOMContentLoaded", function () {
       // get selector with attribute = data-slate-editor
       const editor = document.querySelector('[data-slate-editor]');
-
+      console.log('9999', editor)
       // set contenteditable to false
-      editor.setAttribute('contenteditable', false);
+      editor.contentEditable = false;
     });
   </script>
 </html>

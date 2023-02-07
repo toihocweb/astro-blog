@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Blog.astro
-title: Rust [Day3] - Learn some string methods
+title: Rust - String methods
 description: some common methods for String in rust
 date: 2023-01-30T08:02:11.365Z
 thumbnail: /assets/download.png
