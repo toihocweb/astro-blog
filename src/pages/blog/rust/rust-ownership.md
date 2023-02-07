@@ -8,7 +8,7 @@ thumbnail: /assets/download.png
 ---
 ## Ownership
 
-Reference: <https://www.tutorialspoint.com/rust/rust_ownership.htm>
+Reference: [tutorialspoint](https://www.tutorialspoint.com/rust/rust_ownership.htm)
 
 ![](/assets/download.png)
 
