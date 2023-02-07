@@ -17,9 +17,9 @@ Hiểu đơn giản là "Transition là nhóm các câu lệnh SQL để thực 
 
 Giả sử **Bình** gửi tiền trong 1 ngân hàng nọ, và database gồm 2 table sau `checking` và `saving`(table lưu tiền tiết kiệm)
 
-Ví dụ giờ thằng `Bình` muốn gửi tiết kiệm **200k** thì phải đi qua ít nhất 3 bước sau: 
+Ví dụ giờ  `Bình` muốn gửi tiết kiệm **200k** thì phải đi qua ít nhất 3 bước sau: 
 
-1. Kiểm tra tài khoản thằng **Bình** có >= 200k hay không
+1. Kiểm tra tài khoản **Bình** có >= 200k hay không
 2. Trừ 200k trong tài khoản gốc (được lưu trong table `checking`)
 3. Cộng 200k vào tài khoản tiết kiệm (được lưu trong table `saving`)
 
@@ -35,3 +35,6 @@ khi đó ta có thể định nghĩa 1 transaction đơn giản như sau: 🥳
 5  COMMIT;
 
 ```
+
+\
+Chuyện gì xảy ra nếu database `saving` bị crash ở bước số 4?
