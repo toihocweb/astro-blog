@@ -15,7 +15,7 @@ In order to understand why we have borrowing, you need to take a look at ownersh
 
 It is very **inconvenient** to pass the ownership of a variable to another function and then return the ownership. Rust supports a concept, `borrowing`, where the ownership of a value is transferred temporarily to an entity and then returned to the original owner entity.
 
-consider this example 
+✅ consider this example 
 
 ```rust
 fn main(){
@@ -49,8 +49,6 @@ fn print_vector(x:&Vec<i32>){
 }
 ```
 
-
-
 ### Mutable References
 
 ```rust
@@ -63,8 +61,6 @@ fn main() {
    println!("{}", i); // 4
 }
 ```
-
-
 
 ## Mutating a string reference
 
