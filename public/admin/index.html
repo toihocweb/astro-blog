@@ -16,15 +16,19 @@
   </style>
   <body>
     <!-- Include the script that builds the page and powers Netlify CMS -->
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <script
+      id="cms-editor"
+      src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"
+    ></script>
   </body>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // get selector with attribute = data-slate-editor
-      const editor = document.querySelector('[data-slate-editor]');
-      console.log('9999', editor)
-      // set contenteditable to false
-      editor.contentEditable = false;
-    });
+    const cmsScript = document.getElementById("cms-editor");
+    
+    setTimeout(() => {
+        const cmsEdit = document.querySelector("[data-slate-editor]");
+        console.log(cmsEdit);
+        cmsEdit.setAttribute("contenteditable", "false");
+      }, 2000);
+
   </script>
 </html>
