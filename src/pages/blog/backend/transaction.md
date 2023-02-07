@@ -33,8 +33,18 @@ khi đó ta có thể định nghĩa 1 transaction đơn giản như sau: 🥳
 3  UPDATE checking SET balance = balance - 200.00 WHERE customer_id = 10233276;
 4  UPDATE savings SET balance = balance + 200.00 WHERE customer_id = 10233276;
 5  COMMIT;
-
 ```
 
 \
-Chuyện gì xảy ra nếu database `saving` bị crash ở bước số 4?
+Chuyện gì xảy ra nếu database `saving` bị crash ở bước số 4 hoặc có một ai đó xoá cmn account của **Bình** ở giữa bước 3 và 4, rất nhiều thứ có thể xảy ra phải không nào...
+
+### ACID - tiêu chuẩn của 1 transaction
+
+**Atomicity (A):** một transaction sẽ thực hiện chỉ một unit of work, nghĩa là thực hiện 1 logic nào đó, ví dụ trên là logic về chuyển tiền, trừ tiền của Bình ở table `checking` và cộng vào table `saving` **,** đảm bảo một transaction chỉ có 2 trạng thái
+
+1. thành công hay còn gọi là **committed** - (tất cả các bước đều không có lỗi)
+2. thất bại - (chỉ 1 lỗi phát sinh)
+
+Khi **thất bại**, database sẽ lấy lại gía trị ở trước đó, tất cả thay đổi sẽ được **roll back**
+
+**Consistency (C):** database sẽ luôn chuyển từ trạng thái nhất quán này, sang trạng thái nhất quán khác. ở ví dụ trên có nghĩa là nếu như có lỗi ở step 3 và step 4, thì sẽ không có chuyện tài khoản của **Bình** sẽ bị trừ 200$ mà tk trong `saving` lại không được cộn. Nếu 1 transaction không được committed, thì tất cả cả thay đổi trong trong transaction sẽ không ảnh hưởng đến database, (sẽ không trừ 200$ trong table `checking`)
