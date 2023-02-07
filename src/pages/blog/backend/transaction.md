@@ -38,7 +38,7 @@ khi đó ta có thể định nghĩa 1 transaction đơn giản như sau: 🥳
 \
 Chuyện gì xảy ra nếu database `saving` bị crash ở bước số 4 hoặc có một ai đó xoá cmn account của **Bình** ở giữa bước 3 và 4, rất nhiều thứ có thể xảy ra phải không nào...
 
-### ACID - tiêu chuẩn của 1 transaction
+### ACID - tiêu chuẩn của transaction
 
 **Atomicity (A):** một transaction sẽ thực hiện chỉ một unit of work, nghĩa là thực hiện 1 logic nào đó, ví dụ trên là logic về chuyển tiền, trừ tiền của Bình ở table `checking` và cộng vào table `saving` **,** đảm bảo một transaction chỉ có 2 trạng thái
 
@@ -47,4 +47,12 @@ Chuyện gì xảy ra nếu database `saving` bị crash ở bước số 4 ho�
 
 Khi **thất bại**, database sẽ lấy lại gía trị ở trước đó, tất cả thay đổi sẽ được **roll back**
 
-**Consistency (C):** database sẽ luôn chuyển từ trạng thái nhất quán này, sang trạng thái nhất quán khác. ở ví dụ trên có nghĩa là nếu như có lỗi ở step 3 và step 4, thì sẽ không có chuyện tài khoản của **Bình** sẽ bị trừ 200$ mà tk trong `saving` lại không được cộn. Nếu 1 transaction không được committed, thì tất cả cả thay đổi trong trong transaction sẽ không ảnh hưởng đến database, (sẽ không trừ 200$ trong table `checking`)
+**Consistency (C):** database sẽ luôn chuyển từ trạng thái nhất quán này, sang trạng thái nhất quán khác. ở ví dụ trên có nghĩa là nếu như có lỗi ở step 3 và step 4, thì sẽ không có chuyện tài khoản của **Bình** sẽ bị trừ 200$ mà tk trong `saving` lại không được cộng. Nếu 1 transaction không được committed, thì tất cả cả thay đổi trong trong transaction sẽ không ảnh hưởng đến database (sẽ không trừ 200$ trong table `checking`)
+
+**Isolation (I) :** khi thực hiện nhiều transaction, thì mỗi transaction là độc lập với nhau và không ảnh hưởng đến các transaction khác.
+
+**Durability:** khi 1 transaction được commit thì những thay đổi đó sẽ được lưu lại, có thể là lưu trên database, file system, cloud, message queues..ở ví dụ trên là lưu trên db. 
+
+Giả sử khi xong 1 transaction, nhưng chưa kịp lưu trên database thì cúp cmn điện thì sao đây, thường thì các database sẽ có cơ chế "write-ahead logging", nghĩa là các thay đổi trong transaction sẽ được lưu trong log, và sử dụng nó để recover lại state của database
+
+> MySQL sử dụng InnoDB storage engine để đảm bảo rằng data sẽ không bị mất khi transaction có vấn đề như trên, **"transactions in MySQL are durable and their changes will persist in the database, even in the face of failures or crashes"**
