@@ -10,5 +10,3 @@ thumbnail: /assets/transaction-640.jpg
 ![](/assets/transaction-640.jpg)
 
 ### transaction la gi
-
-\
