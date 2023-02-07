@@ -17,18 +17,7 @@
   <body>
     <!-- Include the script that builds the page and powers Netlify CMS -->
     <script
-      id="cms-editor"
       src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"
     ></script>
   </body>
-  <script>
-    const cmsScript = document.getElementById("cms-editor");
-    
-    setTimeout(() => {
-        const cmsEdit = document.querySelector("[data-slate-editor]");
-        console.log(cmsEdit);
-        cmsEdit.setAttribute("contenteditable", "false");
-      }, 2000);
-
-  </script>
 </html>
